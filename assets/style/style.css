@@ -17,8 +17,8 @@
     color: antiquewhite;
     border-radius: 15px;
     padding: 20px;
-    width: calc(33.333% - 20px); /* 3 cards par ligne avec gap */
-    min-height: 180px; /* hauteur uniforme */
+    width: calc(33.333% - 20px);
+    min-height: 180px; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
@@ -48,6 +48,8 @@
 .add-task-form {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 40%;
     margin: 0 auto;
     border-radius: 20px;
@@ -73,10 +75,29 @@
     display: inline-block;
     text-align: left;
 }
-input, select {
+input, select, textarea {
     width: 100%;
     margin: 0 auto;
     border-radius: 5px;
     padding: 5px;
     
+}
+.update-task-form {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 5em;
+    border-radius: 20px;
+    background-color: rgb(57, 45, 96);
+    box-shadow: 2px 2px 2px 2px lightgray;
+    color: antiquewhite;
+    padding: 2em;
+    font-size: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+textarea {
+    min-width: 100%;
+    max-width: 100%;
 }

@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $priority = $_POST["priority"] ?? '';
     $due_date = trim($_POST["due_date"]  ?? '');
 
-    //Vérifications
+    //vérifications
      if (empty($title)) {
         $errors[] = "Le titre est obligatoire.";
     }
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $errors[] = "Le statut est invalide.";
     }
 
-    // Vérif liste déroulante priority
+    // vérifications liste déroulante priority
     $validPriorities = ["basse", "moyenne", "haute"];
     if (!in_array($priority, $validPriorities)) {
         $errors[] = "La priorité est invalide.";
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if(!empty($due_date) && !preg_match('/^\d{4}-\d{2}-\d{2}$/', $due_date)) {
         $errors[] = "La date fournie est invalide.";
     }
-
+    //condition injection d'une nouvelle tâche en db
     if(empty($errors)){
         try {
             $pdo = dbConnexion();
@@ -76,11 +76,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <form action="" method="POST" class="add-task">
                 <div class="form-text">
                     <label for="title"> Titre</label>
-                    <input type="text" name="title" id="title" required>
+                    <input type="text" name="title" id="title" placeholder="Insérer un titre de tâche" required>
                 </div>
                 <div class="form-text">
                     <label for="description"> Description</label>
-                    <input type="text" name="description" id="description" required>
+                    <textarea name="description" id="description" placeholder="Votre description ..." required></textarea>
                 </div>
                 <div class="form-text">
                     <label for="status"> Status</label>
