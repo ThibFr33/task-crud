@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.task-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+.task-card {
+    background-color: rgb(57, 45, 96);
+    color: antiquewhite;
+    border-radius: 15px;
+    padding: 20px;
+    width: calc(33.333% - 20px); /* 3 cards par ligne avec gap */
+    min-height: 180px; /* hauteur uniforme */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.task-card p {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.task-card span {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.85em;
+    background-color: rgba(255,255,255,0.1);
+}
+.add-task-form {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: rgb(57, 45, 96);
+    box-shadow: 2px 2px 2px 2px lightgray;
+    color: antiquewhite;
+    padding: 2em;
+    font-size: 20px;
+}
+.add-task {
+    width:80%;
+    
+}
+.form-text {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    gap: 2px;
+    width: 100%;
+    align-items: flex-start;
+}
+.form-text label {
+    display: inline-block;
+    text-align: left;
+}
+input, select {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 5px;
+    
+}
