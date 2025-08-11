@@ -39,10 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         try {
             $pdo = dbConnexion();
             
-            $insertTask = $pdo->prepare("
-                    INSERT INTO tasks (title, description, status, priority, due_date) 
-                    VALUES (?, ?, ?, ?, ?)
-                    ");
+            $insertTask = $pdo->prepare("INSERT INTO tasks (title, description, status, priority, due_date) VALUES (?, ?, ?, ?, ?)");
 
             $insertTask->execute([$title, $description, $status, $priority,$due_date]);
 
@@ -55,8 +52,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     }
 }
-
-
 
 
 ?>
@@ -120,3 +115,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //due_date
     //created_at
     //updated_at -->
+
