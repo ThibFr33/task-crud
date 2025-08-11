@@ -29,12 +29,14 @@ $tasks = $tasks->fetchAll();
     <main>
         <h1>Ma Task List:</h1> 
         <section class="task-list">
-            <?php if(!empty("tasks")){ ?>
+            <?php if(!empty($tasks)){ ?>
                 <?php foreach ($tasks as $task){ ?>
                     <div class="task-card">
                         <p><?= htmlspecialchars(trim($task["title"])) ?></p> 
                             <span>Status : <?= ucwords($task["status"]) ?></span>
                             <span>Priorité : <?= ucwords($task["priority"]) ?></span>
+                            <a class="d-none" href="show_task.php?id=<?= (int)$task['id'] ?>">Voir / Modifier</a>
+
                     </div>
                         <?php }?>
             </section>
