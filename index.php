@@ -19,15 +19,15 @@ $tasks = $tasks->fetchAll();
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style/style.css">
-    <title>Task-crud</title>
-</head>
-<body>
-    <main>
-        <h1>Ma Task List:</h1> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/style/style.css">
+        <title>Task-crud</title>
+    </head>
+    <body>
+    <?php include 'includes/header.php';?>
+    <main> 
         <section class="task-list">
             <?php if(!empty($tasks)){ ?>
                 <?php foreach ($tasks as $task){ ?>
@@ -42,7 +42,7 @@ $tasks = $tasks->fetchAll();
             </section>
             <?php } ?>
     </main>
-        
+    <?php include 'includes/footer.php';?>
 </body>
 </html>
 

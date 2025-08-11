@@ -60,19 +60,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style/style.css">
-    <title>Document</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/style/style.css">
+        <title>Document</title>
+    </head>
+    <body>
+    <?php include 'includes/header.php';?>
     <main>
-        <h1>Ajouter une tâche</h1>
         <section class="add-task-form">
+            <h1>Ajouter une tâche</h1>
             <form action="" method="POST" class="add-task">
                 <div class="form-text">
                     <label for="title"> Titre</label>
@@ -109,6 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </form>
         </section>
     </main>
+    <?php include 'includes/footer.php';?>
 </body>
 </html>
 
